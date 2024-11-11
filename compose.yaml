@@ -1,0 +1,13 @@
+services:
+    web:
+      image: node:23
+      working_dir: /app
+      tty: true
+      stdin_open: true
+      ports:
+          - "8080:8080"
+      volumes:
+          - .:/app
+      environment:
+          NODE_ENV: development
+      command: sh -c "npm install && npm run start"
