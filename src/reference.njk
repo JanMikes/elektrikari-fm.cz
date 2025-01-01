@@ -1,0 +1,38 @@
+---
+layout: layout.njk
+title: Naše reference - Elektrikáři Frýdek-Místek
+---
+
+<section>
+    <h1>Naše reference</h1>
+
+    <p>
+        Vítejte na stránce ukázek a referencí naší práce v oblasti elektroinstalací a stavebních projektů. Připravili jsme pro vás galerii fotografií z terénu, které zachycují špičkovou kvalitu našich realizací.
+    </p>
+    <p>
+        Od precizně provedených elektroinstalací až po perfektní propojení komponentů – naše práce je viditelným důkazem spokojenosti našich zákazníků. Fotografie zachycují nejen estetiku a funkčnost našich řešení, ale také důraz na detail a bezpečnost, které v každém projektu klademe na první místo.
+    </p>
+    <p>
+        Naše firma působí převážně v okresech Frýdek-Místek, Karviná, Opava, Vsetín, Nový Jičín, Ostrava a okolí. Díky bohatým zkušenostem a odborným znalostem zajišťujeme kvalitní a profesionální služby v oblasti elektroinstalací a dalších projektů.
+    </p>
+    <p>
+        Prohlédněte si naši galerii a přesvědčte se sami o kvalitě naší práce. Jsme hrdí na každou realizaci, která splnila očekávání našich zákazníků.
+    </p>
+
+    {% for reference in references %}
+        <div>
+            <h2>{{ reference.title }}</h2>
+            <div class="row">
+                {% for image in reference.images %}
+                    <div class="col-3">
+                        <a href="/images/{{ image }}" target="_blank">
+                            <img src="/images/thumbnails/{{ image }}" class="img-fluid img-thumbnail" alt="{{ reference.title }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+
+</section>
