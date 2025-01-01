@@ -19,3 +19,23 @@ main {
 .logo {
     height: 38px;
 }
+
+.noisy {
+    background: hsla(238, 48%, 53%, 1);
+    background: radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsla(234, 93%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+    background: -moz-radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsla(234, 93%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsla(234, 93%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+    height: 100vh;
+}
+
+.noisy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/noisy-texture.png');
+    opacity: 1;
+    pointer-events: none;
+}

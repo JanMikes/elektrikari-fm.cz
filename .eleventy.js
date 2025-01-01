@@ -1,7 +1,8 @@
 export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({
-        "src/favicon": "/",
         "src/images": "images/",
+        "src/favicon": "/",
+        "src/robots.txt": "/robots.txt",
         "node_modules/bootstrap/dist/js": "js/",
         "node_modules/glightbox/dist": "glightbox/"
     });
