@@ -25,7 +25,7 @@ title: Naše reference - Elektrikáři Frýdek-Místek
             <div class="row">
                 {% for image in reference.images %}
                     <div class="col-3">
-                        <a href="/images/{{ image }}" target="_blank">
+                        <a class="glightbox" href="/images/{{ image }}" target="_blank">
                             <img src="/images/thumbnails/{{ image }}" class="img-fluid img-thumbnail" alt="{{ reference.title }}">
                         </a>
                     </div>
