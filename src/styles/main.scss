@@ -22,10 +22,10 @@ main {
 
 .noisy {
     background: hsla(238, 48%, 53%, 1);
-    background: radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsla(234, 93%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-    background: -moz-radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsla(234, 93%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-    background: -webkit-radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsla(234, 93%, 67%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-    height: 100vh;
+    background: radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsl(234, 77%, 71%) 0%, hsla(238, 48%, 53%, 1) 100%);
+    background: -moz-radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsl(234, 77%, 71%) 0%, hsla(238, 48%, 53%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(238, 48%, 53%, 1) 0%, hsl(234, 77%, 71%) 0%, hsla(238, 48%, 53%, 1) 100%);
+
 }
 
 .noisy::before {
@@ -43,4 +43,8 @@ main {
 .reference-img {
     max-width: 200px;
     max-height: 150px;
+}
+
+footer {
+    // border-top: 3px solid #4346bd;
 }
