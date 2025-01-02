@@ -33,7 +33,7 @@
                         <ul class="navbar-nav ms-auto">
                             {% for menuItem in menuItems %}
                                 <li class="nav-item">
-                                    <a class="nav-link me-md-1 {% if page.url == menuItem.url %}active{% endif %}" href="{{ menuItem.url }}">{{ menuItem.title }}</a>
+                                    <a class="nav-link mt-1 mt-md-0 me-md-1 fs-5 {% if page.url == menuItem.url %}active bg-primary text-white{% endif %}" href="{{ menuItem.url }}">{{ menuItem.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
