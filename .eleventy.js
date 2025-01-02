@@ -3,6 +3,7 @@ export default function (eleventyConfig) {
         "src/images": "images/",
         "src/favicon": "/",
         "src/robots.txt": "/robots.txt",
+        "src/humans.txt": "/humans.txt",
         "node_modules/bootstrap/dist/js": "js/",
         "node_modules/glightbox/dist": "glightbox/"
     });
