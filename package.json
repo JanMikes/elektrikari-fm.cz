@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "watch:sass": "sass --watch --quiet-deps compressed --source-map --embed-sources --no-error-css --load-path=node_modules src/styles:_site/css",
+        "watch:sass": "sass --watch --quiet-deps --source-map --embed-sources --no-error-css --load-path=node_modules 'src/styles:_site/css'",
         "watch:start": "eleventy --serve",
         "build:sass": "sass --quiet-deps --embed-sources --no-error-css --load-path=node_modules src/styles:_site/css --style=compressed --source-map",
         "build:eleventy": "eleventy",
