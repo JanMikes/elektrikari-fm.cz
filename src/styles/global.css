@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Import local Inter fonts - only the weights we actually use */
+@import '@fontsource/inter/400.css'; /* Normal */
+@import '@fontsource/inter/500.css'; /* Medium */
+@import '@fontsource/inter/600.css'; /* Semibold */
+@import '@fontsource/inter/700.css'; /* Bold */
 
 @tailwind base;
 @tailwind components;

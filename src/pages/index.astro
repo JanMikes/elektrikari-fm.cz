@@ -10,11 +10,17 @@ import { Zap, Shield, CheckCircle } from 'lucide-astro';
   <section class="relative overflow-hidden py-20 md:py-32">
     <!-- Background Image -->
     <div class="absolute inset-0">
-      <img
-        src="/images/hero.jpg"
-        alt="Elektrikář při práci"
-        class="hero-image w-full h-full object-cover"
-      />
+      <picture>
+        <source srcset="/images/hero.avif" type="image/avif" />
+        <source srcset="/images/hero.webp" type="image/webp" />
+        <img
+          src="/images/hero.jpg"
+          alt="Elektrikář při práci"
+          class="hero-image w-full h-full object-cover"
+          width="1536"
+          height="1024"
+        />
+      </picture>
     </div>
 
     <!-- Primary Color Gradient Overlay -->
