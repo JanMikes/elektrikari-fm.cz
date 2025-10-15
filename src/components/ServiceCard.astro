@@ -11,16 +11,16 @@ const { title, description, href, icon } = Astro.props;
 
 <a
   href={href}
-  class="group block card hover:scale-105 transform transition-all duration-300 border-2 border-transparent hover:border-accent-400 hover:shadow-2xl backdrop-blur-sm bg-white/95"
+  class="group block card hover:scale-105 transform transition-all duration-300 border-2 border-transparent hover:border-accent-400 hover:shadow-2xl backdrop-blur-sm bg-white/95 !p-4 md:!p-6"
 >
-  <div class="flex flex-col items-center text-center space-y-4">
+  <div class="flex flex-col items-center text-center space-y-2 md:space-y-4">
     {icon && (
-      <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
+      <div class="w-12 h-12 md:w-16 md:h-16 bg-primary-100 rounded-full flex items-center justify-center group-hover:bg-primary-200 transition-colors duration-300">
         <Fragment set:html={icon} />
       </div>
     )}
 
-    <h2 class="text-2xl font-bold text-primary-700 group-hover:text-primary-800 transition-colors">
+    <h2 class="text-xl md:text-2xl font-bold text-primary-700 group-hover:text-primary-800 transition-colors">
       {title}
     </h2>
 
