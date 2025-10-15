@@ -1,6 +1,8 @@
 compose.override.yaml
 
 node_modules/
-_site/
+dist/
 
 .claude/settings.local.json
+
+.astro
