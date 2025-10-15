@@ -7,9 +7,21 @@ import { Zap, Shield, CheckCircle } from 'lucide-astro';
 
 <BaseLayout>
   <!-- Hero Section -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-primary-800 via-primary-600 to-blue-500 py-20 md:py-32">
-    <!-- Animated gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-tr from-blue-400/20 via-transparent to-primary-500/20 animate-gradient"></div>
+  <section class="relative overflow-hidden py-20 md:py-32">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img
+        src="/images/hero.jpg"
+        alt="Elektrikář při práci"
+        class="hero-image w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Primary Color Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-900/85 via-primary-700/80 to-blue-600/75"></div>
+
+    <!-- Animated gradient overlay for depth -->
+    <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-primary-600/20 animate-gradient"></div>
 
     <!-- Decorative elements -->
     <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-gradient"></div>
@@ -106,3 +118,15 @@ import { Zap, Shield, CheckCircle } from 'lucide-astro';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero-image {
+    object-position: 65% center;
+  }
+
+  @media (max-width: 768px) {
+    .hero-image {
+      object-position: 40% center;
+    }
+  }
+</style>
