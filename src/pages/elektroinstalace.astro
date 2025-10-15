@@ -6,8 +6,9 @@ import { CheckCircle } from 'lucide-astro';
 ---
 
 <BaseLayout
-  title="Elektroinstalace - Frýdek-Místek a okolí"
-  description="Poskytujeme profesionální elektroinstalace pro rodinné domy, byty i komerční objekty. Působíme ve Frýdku-Místku, Ostravě, Karviné, Opavě a okolí. Kvalitní řemeslo a spokojenost zákazníků jsou naší prioritou."
+  title="Elektroinstalace Frýdek-Místek | Elektrikáři pro domy a firmy | Kvalitní provedení"
+  description="Profesionální elektroinstalace ve Frýdku-Místku a okolí. Elektrikáři s 10+ lety zkušeností. Elektroinstalace rodinných domů, bytů, komerčních objektů. Montáž rozvaděčů, elektroměrových pilířů. Ostrava, Karviná, Opava."
+  keywords="elektroinstalace Frýdek-Místek, elektrikář Frýdek-Místek, elektroinstalace rodinný dům, montáž rozvaděčů, elektroinstalace komerční objekty, elektrikář Ostrava, elektrikář Karviná, elektroměrový pilíř"
 >
   <section class="py-8 md:py-14">
     <div class="container-custom">
@@ -152,4 +153,58 @@ import { CheckCircle } from 'lucide-astro';
       <CallToAction />
     </div>
   </section>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domů",
+          "item": "https://elektrikari-fm.cz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Elektroinstalace",
+          "item": "https://elektrikari-fm.cz/elektroinstalace/"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Elektroinstalace",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://elektrikari-fm.cz/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Frýdek-Místek"
+        },
+        {
+          "@type": "City",
+          "name": "Ostrava"
+        },
+        {
+          "@type": "City",
+          "name": "Karviná"
+        },
+        {
+          "@type": "City",
+          "name": "Opava"
+        }
+      ],
+      "description": "Profesionální elektroinstalace pro rodinné domy, byty a komerční objekty. Montáž rozvaděčů, elektroměrových pilířů a kompletní elektrické rozvody."
+    }
+  </script>
 </BaseLayout>

@@ -7,13 +7,18 @@ interface Props {
   title?: string;
   description?: string;
   keywords?: string;
+  image?: string;
 }
 
 const {
   title = "Elektroinstalace, Hromosvody, Revize - Elektrikáři z Frýdku-Místku",
   description = "Profesionální elektrikáři z Frýdku-Místku. Nabízíme elektroinstalace, montáž hromosvodů a revize. Působíme v okolí Ostravy, Karviné a Opavy. Kvalita a spokojenost zákazníků jsou naší prioritou.",
-  keywords = "elektrikář, elektroinstalace, revize, elektro, hromosvody, Frýdek-Místek, Ostrava, Karviná"
+  keywords = "elektrikář, elektroinstalace, revize, elektro, hromosvody, Frýdek-Místek, Ostrava, Karviná",
+  image = "/images/hero.jpg"
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://elektrikari-fm.cz');
+const ogImage = new URL(image, Astro.site || 'https://elektrikari-fm.cz');
 ---
 
 <!DOCTYPE html>
@@ -21,12 +26,37 @@ const {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content={keywords}>
-  <meta name="description" content={description}>
-  <meta name="author" content="Jan Mikeš - j.mikes@me.com">
-  <meta name="robots" content="index, follow">
 
+  <!-- Primary Meta Tags -->
   <title>{title}</title>
+  <meta name="title" content={title}>
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+  <meta name="author" content="Jan Mikeš - j.mikes@me.com">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href={canonicalURL}>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="Elektrikáři Frýdek-Místek">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content={canonicalURL}>
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="CZ-MO">
+  <meta name="geo.placename" content="Frýdek-Místek">
+  <meta name="geo.position" content="49.6833;18.3500">
+  <meta name="ICBM" content="49.6833, 18.3500">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -45,6 +75,94 @@ const {
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4V7PF8X53R');
+  </script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://elektrikari-fm.cz/#organization",
+      "name": "Elektrikáři Frýdek-Místek",
+      "url": "https://elektrikari-fm.cz",
+      "logo": "https://elektrikari-fm.cz/logo.svg",
+      "description": "Profesionální elektrikáři z Frýdku-Místku. Nabízíme elektroinstalace, montáž hromosvodů a revize elektroinstalací.",
+      "image": "https://elektrikari-fm.cz/images/hero.jpg",
+      "priceRange": "$$",
+      "telephone": "+420 608 006 266",
+      "email": "info@elektrikari-fm.cz",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Frýdek-Místek",
+        "addressRegion": "Moravskoslezský kraj",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "49.6833",
+        "longitude": "18.3500"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Frýdek-Místek"
+        },
+        {
+          "@type": "City",
+          "name": "Ostrava"
+        },
+        {
+          "@type": "City",
+          "name": "Karviná"
+        },
+        {
+          "@type": "City",
+          "name": "Opava"
+        },
+        {
+          "@type": "City",
+          "name": "Vsetín"
+        },
+        {
+          "@type": "City",
+          "name": "Nový Jičín"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Elektrikářské služby",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Elektroinstalace",
+              "description": "Profesionální elektroinstalace pro rodinné domy, byty i komerční objekty",
+              "url": "https://elektrikari-fm.cz/elektroinstalace/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Revize elektroinstalací",
+              "description": "Odborné revize elektroinstalací, hromosvodů, spotřebičů a technologií",
+              "url": "https://elektrikari-fm.cz/revize/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Hromosvody",
+              "description": "Montáž, opravy a revize hromosvodů pro ochranu budov před bleskem",
+              "url": "https://elektrikari-fm.cz/hromosvody/"
+            }
+          }
+        ]
+      },
+      "sameAs": []
+    }
   </script>
 </head>
 <body class="min-h-screen flex flex-col">

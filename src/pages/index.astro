@@ -5,7 +5,11 @@ import CallToAction from '../components/CallToAction.astro';
 import { Zap, Shield, CheckCircle } from 'lucide-astro';
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Elektrikáři Frýdek-Místek | Elektroinstalace, Revize, Hromosvody"
+  description="Hledáte profesionální elektrikáře ve Frýdku-Místku? Nabízíme elektroinstalace, revize elektro, montáž hromosvodů pro Frýdek-Místek, Ostravu, Karvinou, Opavu. Kvalita a 100% spokojenost zákazníků."
+  keywords="elektrikáři Frýdek-Místek, elektroinstalace Frýdek-Místek, revize elektro, hromosvody, elektrikář Ostrava, elektrikář Karviná, elektrikář Opava, revize elektroinstalací, montáž hromosvodů"
+>
   <!-- Hero Section -->
   <section class="relative overflow-hidden py-20 md:py-32">
     <!-- Background Image -->
@@ -15,10 +19,11 @@ import { Zap, Shield, CheckCircle } from 'lucide-astro';
         <source srcset="/images/hero.webp" type="image/webp" />
         <img
           src="/images/hero.jpg"
-          alt="Elektrikář při práci"
+          alt="Profesionální elektrikáři z Frýdku-Místku - elektroinstalace, revize a hromosvody"
           class="hero-image w-full h-full object-cover"
           width="1536"
           height="1024"
+          fetchpriority="high"
         />
       </picture>
     </div>

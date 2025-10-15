@@ -6,8 +6,9 @@ import { CheckCircle, Shield } from 'lucide-astro';
 ---
 
 <BaseLayout
-  title="Hromosvody - Frýdek-Místek a okolí"
-  description="Montujeme, opravujeme a provádíme revize hromosvodů pro domy i komerční objekty. Působíme ve Frýdku-Místku, Ostravě, Karviné, Opavě a okolí. Spolehněte se na kvalitu a bezpečnost."
+  title="Hromosvody Frýdek-Místek | Montáž, opravy a revize hromosvodů"
+  description="Montáž hromosvodů Frýdek-Místek a okolí. Profesionální návrh, instalace, opravy a revize hromosvodů. Ochrana budov před bleskem. Certifikovaní elektrikáři. Spolehlivé řešení pro rodinné domy i firmy. Ostrava, Karviná, Opava."
+  keywords="hromosvody Frýdek-Místek, montáž hromosvodů, revize hromosvodů, oprava hromosvodů, bleskosvod, ochrana před bleskem, instalace hromosvodů, hromosvody Ostrava, hromosvody Karviná"
 >
   <section class="py-8 md:py-14">
     <div class="container-custom">
@@ -126,4 +127,58 @@ import { CheckCircle, Shield } from 'lucide-astro';
       <CallToAction />
     </div>
   </section>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domů",
+          "item": "https://elektrikari-fm.cz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hromosvody",
+          "item": "https://elektrikari-fm.cz/hromosvody/"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Hromosvody",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://elektrikari-fm.cz/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Frýdek-Místek"
+        },
+        {
+          "@type": "City",
+          "name": "Ostrava"
+        },
+        {
+          "@type": "City",
+          "name": "Karviná"
+        },
+        {
+          "@type": "City",
+          "name": "Opava"
+        }
+      ],
+      "description": "Montáž, opravy a revize hromosvodů. Profesionální ochrana budov před bleskem podle platných norem."
+    }
+  </script>
 </BaseLayout>

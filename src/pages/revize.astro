@@ -6,8 +6,9 @@ import { CheckCircle, Shield } from 'lucide-astro';
 ---
 
 <BaseLayout
-  title="Revize - Frýdek-Místek a okolí"
-  description="Provádíme profesionální revize elektroinstalací, hromosvodů, spotřebičů a technologií. Jsme elektrikáři z Frýdku-Místku, působící také v Ostravě, Karviné, Opavě a okolí."
+  title="Revize elektro Frýdek-Místek | Revize elektroinstalací, hromosvodů, spotřebičů"
+  description="Odborné revize elektroinstalací Frýdek-Místek. Revize elektro pro domy, byty, firmy. Revize hromosvodů, spotřebičů, FVE. Certifikovaní elektrikáři. Bezpečnost a legislativní požadavky. Ostrava, Karviná, Opava."
+  keywords="revize elektro Frýdek-Místek, revize elektroinstalací, revize hromosvodů, revize spotřebičů, revize FVE, elektro revize, periodická revize, revize Ostrava, revize Karviná"
 >
   <section class="py-8 md:py-14">
     <div class="container-custom">
@@ -156,4 +157,58 @@ import { CheckCircle, Shield } from 'lucide-astro';
       <CallToAction />
     </div>
   </section>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domů",
+          "item": "https://elektrikari-fm.cz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Revize",
+          "item": "https://elektrikari-fm.cz/revize/"
+        }
+      ]
+    }
+  </script>
+
+  <!-- Service Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Revize elektroinstalací",
+      "provider": {
+        "@type": "LocalBusiness",
+        "@id": "https://elektrikari-fm.cz/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Frýdek-Místek"
+        },
+        {
+          "@type": "City",
+          "name": "Ostrava"
+        },
+        {
+          "@type": "City",
+          "name": "Karviná"
+        },
+        {
+          "@type": "City",
+          "name": "Opava"
+        }
+      ],
+      "description": "Profesionální revize elektroinstalací, hromosvodů, spotřebičů a technologií. Zajištění bezpečnosti a splnění legislativních požadavků."
+    }
+  </script>
 </BaseLayout>
