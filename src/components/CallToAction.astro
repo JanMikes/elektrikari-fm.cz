@@ -1,0 +1,26 @@
+---
+interface Props {
+  primaryText?: string;
+  primaryHref?: string;
+  secondaryText?: string;
+  secondaryHref?: string;
+  centered?: boolean;
+}
+
+const {
+  primaryText = "Kontaktujte nás",
+  primaryHref = "/kontakt/",
+  secondaryText = "Naše reference",
+  secondaryHref = "/reference/",
+  centered = true
+} = Astro.props;
+---
+
+<div class:list={["flex flex-wrap gap-4 mt-8", { "justify-center": centered }]}>
+  <a href={primaryHref} class="btn-primary">
+    {primaryText}
+  </a>
+  <a href={secondaryHref} class="btn-secondary">
+    {secondaryText}
+  </a>
+</div>

@@ -4,65 +4,67 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Czech electrician company website built with Eleventy (11ty) static site generator. The site showcases electrical services including installations, lightning rods, and electrical inspections.
+This is a Czech electrician company website built with **Astro**, a modern static site generator. The site showcases electrical services including installations, lightning rods, and electrical inspections with a clean, modern design.
 
 ## Development Commands
 
 ### Local Development
-- `npm run start` - Start development server with live reload (runs SASS watcher and Eleventy serve in parallel)
-- `docker compose up` - Alternative development using Docker, serves at http://localhost:8080
+- `npm run dev` - Start Astro development server at http://localhost:4321 with hot reload
+- `npm run preview` - Preview production build locally before deployment
 
 ### Build Commands
-- `npm run build` - Build the complete site for production (compiles SASS and builds Eleventy in parallel)
-- `npm run build:sass` - Compile SASS to compressed CSS with source maps
-- `npm run build:eleventy` - Build Eleventy static site
-
-### Watch Commands
-- `npm run watch:sass` - Watch SASS files for changes and compile automatically
-- `npm run watch:start` - Start Eleventy development server with live reload
+- `npm run build` - Build the complete site for production (outputs to `dist/`)
+- `npm run astro ...` - Run Astro CLI commands
 
 ## Project Architecture
 
 ### Directory Structure
 - `src/` - Source files
-  - `_includes/layout.njk` - Base HTML layout template with navigation and footer
-  - `_data/` - JSON data files for dynamic content
-    - `menuItems.json` - Navigation menu structure
-    - `references.json` - Project portfolio images and descriptions
-  - `*.njk` - Nunjucks page templates (index, kontakt, o-nas, reference, etc.)
-  - `styles/main.scss` - SASS entry point, imports Webpixels CSS framework
-  - `images/` - Static images and thumbnails
-  - `favicon/` - Favicon and web app manifest files
+  - `layouts/` - Page layouts (BaseLayout.astro)
+  - `components/` - Reusable Astro components
+    - Header.astro, Footer.astro - Navigation and footer
+    - ServiceCard.astro, CallToAction.astro - UI components
+    - ImageGallery.astro - Custom gallery with lightbox
+  - `data/` - TypeScript data files
+    - `menuItems.ts` - Navigation menu structure
+    - `references.ts` - Project portfolio images and descriptions
+  - `pages/` - Page routes (become URLs)
+    - index.astro, o-nas.astro, kontakt.astro, etc.
+  - `styles/` - Global styles
+    - `global.css` - Tailwind CSS and custom styles
 
-- `_site/` - Generated output directory (Eleventy builds here)
-- `node_modules/` - Dependencies copied to output via passthrough
+- `public/` - Static assets (images, favicons, sitemap, etc.)
+- `dist/` - Generated output directory (build artifacts)
 
 ### Template System
-- Uses Nunjucks templating (.njk files)
-- Single layout template (`layout.njk`) with Czech content
-- Dynamic navigation from `menuItems.json`
-- Portfolio gallery from `references.json` with GLightbox integration
+- Uses Astro component syntax (.astro files)
+- TypeScript for data files and type safety
+- Component-based architecture with props
+- Dynamic navigation from `menuItems.ts`
+- Portfolio gallery from `references.ts` with custom lightbox
 
 ### Styling Architecture
-- SASS-based styling with `@webpixels/css` framework
-- Bootstrap 5.3.2 for components and utilities
-- Custom styles in `main.scss` for branding and layout
-- Responsive design with mobile navigation
+- **Tailwind CSS** - Utility-first CSS framework
+- Custom color palette (Primary: Blue, Accent: Amber)
+- Responsive design with mobile-first approach
+- Inter font family for modern typography
+- Custom components defined in global.css
 
 ### Static Assets
-- Images automatically copied from `src/images/` to `_site/images/`
-- Bootstrap JS and GLightbox library copied from node_modules
-- Favicon and manifest files copied to site root
-- Sitemap, robots.txt, and humans.txt included
+- All static files in `public/` directory
+- Images organized in `public/images/` and `public/images/thumbnails/`
+- Favicons and manifest files in public root
+- Sitemap.xml, robots.txt, and humans.txt included
 
 ### Content Management
 - Czech language content throughout
-- SEO-optimized with meta descriptions and keywords
+- SEO-optimized with meta descriptions and keywords per page
 - Google Analytics integration (GA4)
-- Contact information and service descriptions in footer
+- Contact form with validation and StaticForms API integration
 
 ### Build Process
-- Eleventy processes Nunjucks templates and data files
-- SASS compiles with Bootstrap and Webpixels CSS dependencies
-- All assets copied via Eleventy passthrough configuration
-- Production builds create compressed CSS with source maps
+- Astro builds to static HTML/CSS/JS in `dist/` directory
+- Tailwind CSS processes utility classes
+- TypeScript compiles with strict mode
+- All assets optimized for production
+- Output ready for any static hosting service

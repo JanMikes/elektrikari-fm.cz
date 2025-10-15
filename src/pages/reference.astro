@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import ImageGallery from '../components/ImageGallery.astro';
+import { references } from '../data/references';
+---
+
+<BaseLayout
+  title="Naše reference - Elektrikáři z Frýdku-Místku"
+  description="Prohlédněte si reference naší práce v oblasti elektroinstalací, revizí a montáže hromosvodů. Jsme elektrikáři z Frýdku-Místku, kteří dbají na kvalitu a spokojenost zákazníků."
+>
+  <section class="py-8 md:py-14">
+    <div class="container-custom">
+      <SectionTitle title="Naše reference" />
+
+      <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
+        Prohlédněte si naši galerii a přesvědčte se sami o kvalitě naší práce.
+        Jsme hrdí na každou realizaci, která splnila očekávání našich zákazníků.
+      </p>
+
+      <div class="space-y-12">
+        {references.map((reference) => (
+          <ImageGallery title={reference.title} images={reference.images} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-50"
+      aria-label="Close"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-prev"
+      class="absolute left-4 text-white hover:text-gray-300 transition-colors z-50"
+      aria-label="Previous"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-next"
+      class="absolute right-4 text-white hover:text-gray-300 transition-colors z-50"
+      aria-label="Next"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <div class="max-w-7xl max-h-full flex flex-col items-center">
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+        class="max-w-full max-h-[80vh] object-contain rounded-lg"
+      />
+      <div id="lightbox-caption" class="text-white text-center mt-4 text-lg font-medium"></div>
+    </div>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    let currentImages: string[] = [];
+    let currentIndex = 0;
+    let currentTitle = '';
+
+    const modal = document.getElementById('lightbox-modal');
+    const image = document.getElementById('lightbox-image') as HTMLImageElement;
+    const caption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    function showImage(index: number) {
+      if (index < 0) index = currentImages.length - 1;
+      if (index >= currentImages.length) index = 0;
+
+      currentIndex = index;
+      image.src = `/images/${currentImages[index]}`;
+      image.alt = `${currentTitle} - ${index + 1}`;
+      if (caption) {
+        caption.textContent = `${currentTitle} (${index + 1} / ${currentImages.length})`;
+      }
+    }
+
+    function openLightbox(title: string, images: string[], startIndex: number) {
+      currentTitle = title;
+      currentImages = images;
+      currentIndex = startIndex;
+      showImage(currentIndex);
+      modal?.classList.remove('hidden');
+      modal?.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      modal?.classList.add('hidden');
+      modal?.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    document.querySelectorAll('.gallery-image-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const title = target.dataset.title || '';
+        const image = target.dataset.image || '';
+        const index = parseInt(target.dataset.index || '0');
+
+        // Get all images from the same gallery
+        const galleryButtons = document.querySelectorAll(`[data-title="${title}"]`);
+        const images = Array.from(galleryButtons).map(
+          (btn) => (btn as HTMLElement).dataset.image || ''
+        );
+
+        openLightbox(title, images, index);
+      });
+    });
+
+    closeBtn?.addEventListener('click', closeLightbox);
+    prevBtn?.addEventListener('click', () => showImage(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => showImage(currentIndex + 1));
+
+    // Close on background click
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!modal?.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      }
+    });
+  </script>
+</BaseLayout>

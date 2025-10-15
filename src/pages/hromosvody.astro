@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { CheckCircle, Shield } from 'lucide-astro';
+---
+
+<BaseLayout
+  title="Hromosvody - Frýdek-Místek a okolí"
+  description="Montujeme, opravujeme a provádíme revize hromosvodů pro domy i komerční objekty. Působíme ve Frýdku-Místku, Ostravě, Karviné, Opavě a okolí. Spolehněte se na kvalitu a bezpečnost."
+>
+  <section class="py-8 md:py-14">
+    <div class="container-custom">
+      <SectionTitle
+        title="Hromosvody"
+        subtitle="Ochrana, na kterou se můžete spolehnout"
+      />
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p>
+            Hromosvod je nezbytnou součástí každé budovy, která chrání váš majetek, zdraví i život před ničivými
+            následky úderu blesku. Jeho <strong>správná instalace a pravidelná údržba</strong> jsou klíčem k tomu,
+            aby váš domov, firma nebo průmyslový objekt zůstaly v bezpečí.
+          </p>
+
+          <p>
+            Jako zkušení elektrikáři z Frýdku-Místku a okolí nabízíme profesionální služby v oblasti hromosvodů.
+            Díky našim zkušenostem z České republiky i Německa poskytujeme práci na <strong>špičkové úrovni</strong>,
+            která odpovídá všem normám a zákonným požadavkům.
+          </p>
+
+          <h3 class="text-2xl font-bold text-primary-800 mt-8 mb-4">Naše služby v oblasti hromosvodů zahrnují:</h3>
+
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <CheckCircle class="h-6 w-6 text-accent-600 flex-shrink-0 mt-1" />
+              <div>
+                <strong class="text-gray-900">Návrh a montáž hromosvodů:</strong>
+                <p class="text-gray-700">Navrhneme a nainstalujeme hromosvody na rodinné domy, bytové i komerční objekty. Dbáme na kvalitu materiálů a precizní provedení, aby hromosvod dlouhodobě splňoval svou ochrannou funkci.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <CheckCircle class="h-6 w-6 text-accent-600 flex-shrink-0 mt-1" />
+              <div>
+                <strong class="text-gray-900">Opravy hromosvodů:</strong>
+                <p class="text-gray-700">Zajistíme opravy poškozených nebo nefunkčních hromosvodů, ať už v důsledku opotřebení, povětrnostních vlivů nebo pojistných událostí.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <CheckCircle class="h-6 w-6 text-accent-600 flex-shrink-0 mt-1" />
+              <div>
+                <strong class="text-gray-900">Revize hromosvodů:</strong>
+                <p class="text-gray-700">Provádíme pravidelné odborné kontroly, které zajistí, že váš hromosvod odpovídá všem platným normám a je plně funkční.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3">
+              <CheckCircle class="h-6 w-6 text-accent-600 flex-shrink-0 mt-1" />
+              <div>
+                <strong class="text-gray-900">Konzultace a optimalizace:</strong>
+                <p class="text-gray-700">Rádi vám poradíme s výběrem a umístěním hromosvodu, a to jak u novostaveb, tak při rekonstrukcích starších objektů.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-primary-50 border-l-4 border-primary-600 p-6 my-8 rounded-r-lg">
+            <p class="text-gray-800 leading-relaxed">
+              <strong class="text-primary-800">Naší prioritou je vaše bezpečnost a spokojenost.</strong>
+              Práci na hromosvodech provádíme s maximální pečlivostí, profesionalitou a důrazem na detail.
+              Obraťte se na nás a přesvědčte se, že hromosvody od nás jsou tou nejlepší investicí do ochrany vašeho majetku.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <aside class="card bg-gradient-to-br from-primary-50 to-accent-50 border-2 border-primary-200">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+                <Shield class="h-6 w-6 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold text-primary-800">Proč jsou hromosvody důležité?</h3>
+            </div>
+
+            <ul class="space-y-4">
+              <li class="flex items-start space-x-3">
+                <CheckCircle class="h-5 w-5 text-primary-600 flex-shrink-0 mt-1" />
+                <div>
+                  <strong class="text-gray-900">Ochrana majetku:</strong>
+                  <p class="text-sm text-gray-700">Úder blesku může způsobit vážné škody na elektroinstalacích, zařízeních i samotné stavbě. Hromosvod tomu zabrání.</p>
+                </div>
+              </li>
+
+              <li class="flex items-start space-x-3">
+                <CheckCircle class="h-5 w-5 text-primary-600 flex-shrink-0 mt-1" />
+                <div>
+                  <strong class="text-gray-900">Zabezpečení osob:</strong>
+                  <p class="text-sm text-gray-700">Hromosvod chrání vás, vaši rodinu, zaměstnance i zákazníky před nebezpečím úrazu elektrickým proudem.</p>
+                </div>
+              </li>
+
+              <li class="flex items-start space-x-3">
+                <CheckCircle class="h-5 w-5 text-primary-600 flex-shrink-0 mt-1" />
+                <div>
+                  <strong class="text-gray-900">Legislativní požadavky:</strong>
+                  <p class="text-sm text-gray-700">Na mnoha typech objektů jsou hromosvody povinné, a jejich stav musí být pravidelně kontrolován.</p>
+                </div>
+              </li>
+
+              <li class="flex items-start space-x-3">
+                <CheckCircle class="h-5 w-5 text-primary-600 flex-shrink-0 mt-1" />
+                <div>
+                  <strong class="text-gray-900">Klid a jistota:</strong>
+                  <p class="text-sm text-gray-700">S funkčním hromosvodem můžete být v klidu i během bouřek, protože víte, že váš majetek je chráněn.</p>
+                </div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <CallToAction />
+    </div>
+  </section>
+</BaseLayout>

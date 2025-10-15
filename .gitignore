@@ -2,3 +2,5 @@ compose.override.yaml
 
 node_modules/
 _site/
+
+.claude/settings.local.json

@@ -1,0 +1,26 @@
+export const menuItems = [
+  {
+    title: "O nás",
+    url: "/o-nas/"
+  },
+  {
+    title: "Reference",
+    url: "/reference/"
+  },
+  {
+    title: "Elektroinstalace",
+    url: "/elektroinstalace/"
+  },
+  {
+    title: "Hromosvody",
+    url: "/hromosvody/"
+  },
+  {
+    title: "Revize",
+    url: "/revize/"
+  },
+  {
+    title: "Kontakt",
+    url: "/kontakt/"
+  }
+];

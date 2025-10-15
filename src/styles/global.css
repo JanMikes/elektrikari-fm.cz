@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-900 antialiased;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold text-primary-800;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-gray-900;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-primary-700 text-white font-semibold rounded-lg shadow-md hover:bg-primary-800 transition-all duration-200 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-lg border-2 border-primary-700 hover:bg-primary-50 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  @keyframes gradient-shift {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient-shift 8s ease-in-out infinite;
+  }
+}

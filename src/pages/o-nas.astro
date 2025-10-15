@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import CallToAction from '../components/CallToAction.astro';
+---
+
+<BaseLayout
+  title="O nás - Elektrikáři z Frýdku-Místku"
+  description="Jsme zkušení elektrikáři z Frýdku-Místku, poskytujeme elektroinstalace, revize a montáž hromosvodů. Milujeme řemeslo a dbáme na kvalitní práci a spokojenost zákazníků."
+>
+  <section class="py-8 md:py-14">
+    <div class="container-custom">
+      <SectionTitle title="O nás" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Content -->
+        <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p>
+            Jsme tým zkušených elektrikářů z Frýdku-Místku, kteří se specializují na poskytování
+            profesionálních elektroinstalačních služeb včetně oprav, revizí a montáží hromosvodů.
+            Naše působnost zahrnuje nejen Frýdek-Místek, ale také okolní okresy jako
+            <strong>Karviná, Opava, Vsetín, Nový Jičín a Ostrava</strong>.
+          </p>
+
+          <p>
+            Milujeme naše řemeslo a věříme, že <strong>kvalitně odvedená práce je tou nejlepší vizitkou</strong>.
+            Naším cílem je 100% spokojenost zákazníků, která nás motivuje být každý den lepší.
+            Každou zakázku realizujeme s maximální péčí, precizností a s důrazem na vaše individuální potřeby.
+          </p>
+
+          <p>
+            Ať už potřebujete novou elektroinstalaci, odbornou revizi nebo opravu, jsme tu pro vás.
+            Kontaktujte nás a přesvědčte se, že naše práce splní vaše očekávání!
+          </p>
+
+          <CallToAction centered={false} />
+        </div>
+
+        <!-- Image -->
+        <div class="lg:order-last max-w-md mx-auto lg:ml-auto lg:mr-0">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-200 to-accent-200 rounded-2xl transform rotate-3"></div>
+            <img
+              src="/images/thumbnails/o-nas.jpg"
+              alt="O nás - Elektrikáři FM"
+              class="relative rounded-2xl shadow-2xl w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info Section -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="relative overflow-hidden rounded-xl shadow-lg p-8 text-center bg-gradient-to-br from-primary-600 to-primary-800 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="text-5xl font-bold text-white mb-3">10+</div>
+          <p class="text-blue-100 text-lg font-medium">Let zkušeností</p>
+        </div>
+
+        <div class="relative overflow-hidden rounded-xl shadow-lg p-8 text-center bg-gradient-to-br from-accent-500 to-accent-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="text-5xl font-bold text-white mb-3">100%</div>
+          <p class="text-cyan-50 text-lg font-medium">Spokojenost zákazníků</p>
+        </div>
+
+        <div class="relative overflow-hidden rounded-xl shadow-lg p-8 text-center bg-gradient-to-br from-primary-700 to-blue-500 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="text-5xl font-bold text-white mb-3">500+</div>
+          <p class="text-blue-100 text-lg font-medium">Realizovaných projektů</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
