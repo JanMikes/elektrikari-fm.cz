@@ -2,8 +2,14 @@
 import { Phone, Mail, MapPin } from 'lucide-astro';
 ---
 
-<footer class="bg-primary-800 text-white">
-  <div class="container-custom py-12">
+<footer class="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white overflow-hidden">
+  <!-- Decorative background elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-accent-400 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-600 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+  </div>
+
+  <div class="container-custom py-12 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Contact Information -->
       <div class="space-y-4">
@@ -47,14 +53,14 @@ import { Phone, Mail, MapPin } from 'lucide-astro';
           Milujeme naše řemeslo a věříme, že kvalitně odvedená práce je tou nejlepší vizitkou.
         </p>
 
-        <div class="mt-6 pt-6 border-t border-primary-700 text-sm text-gray-300">
+        <div class="mt-6 pt-6 border-t border-white/20 text-sm text-gray-300">
           <p><strong>IČ:</strong> 07431163</p>
           <p><strong>DIČ:</strong> CZ9702235378</p>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-primary-700 text-center text-gray-300 text-sm">
+    <div class="mt-12 pt-8 border-t border-white/20 text-center text-gray-300 text-sm">
       <p>&copy; {new Date().getFullYear()} Elektrikáři FM. Všechna práva vyhrazena.</p>
     </div>
   </div>
